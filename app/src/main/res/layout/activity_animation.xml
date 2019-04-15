@@ -8,15 +8,15 @@
 
 
     <ImageView
+        android:id="@+id/iv_img"
         android:layout_width="180dp"
         android:layout_height="180dp"
-        android:id="@+id/iv_img"
         android:background="@color/colorAccent"
-        app:layout_constraintTop_toTopOf="parent"
+        android:scaleType="centerCrop"
         app:layout_constraintLeft_toLeftOf="parent"
-        android:scaleType="centerCrop"/>
+        app:layout_constraintTop_toTopOf="parent" />
     <!--以下都是在图片尺寸大于imageview尺寸-->
-<!--center:原始图片大小不变，imageview多大就显示多大的图片-->
+    <!--center:原始图片大小不变，imageview多大就显示多大的图片-->
     <!--fixxy:原始图片显示imageview大小，会变形（如果宽高比不相同的话）,也就是填充imageview的大小-->
     <!--fitCenter:原始图片的比例显示在imageview里的，如果imageview大小不一致的话会有空白-->
     <!--centerCrop:会截取，但不会变形-->
@@ -24,13 +24,22 @@
     <!--fitStart:类似fitCenter,但是从左上角开始填充-->
     <!--fitEnd:类似fitCenter,但是从右下角开始填充-->
     <ImageView
+        android:id="@+id/iv_img2"
         android:layout_width="180dp"
         android:layout_height="180dp"
-        android:id="@+id/iv_img2"
         android:background="@color/colorAccent"
-        app:layout_constraintTop_toBottomOf="@id/iv_img"
-        app:layout_constraintLeft_toLeftOf="parent"
+        android:scaleType="fitCenter"
         android:src="@mipmap/beauty1"
-        android:scaleType="fitCenter"/>
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/iv_img" />
+
+    <ProgressBar
+        android:id="@+id/loading_spinner"
+        style="?android:progressBarStyleLarge"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        app:layout_constraintTop_toBottomOf="@+id/iv_img2"
+        app:layout_constraintLeft_toLeftOf="parent"/>
 
 </android.support.constraint.ConstraintLayout>
