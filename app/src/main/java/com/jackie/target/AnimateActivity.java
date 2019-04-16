@@ -33,6 +33,7 @@ public class AnimateActivity extends BaseActivity {
     AnimationDrawable animationDrawable;
     final int duration = 5000;
     int width;
+    int h;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -43,6 +44,7 @@ public class AnimateActivity extends BaseActivity {
         img1.setBackgroundResource(R.drawable.value_ani);
         animationDrawable = (AnimationDrawable) img1.getBackground();
         width = img2.getLayoutParams().width;
+        h = img2.getLayoutParams().height;
         img1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -62,7 +64,7 @@ public class AnimateActivity extends BaseActivity {
 //                objectAnim();
 //                animateShow();
                 ViewWrapper wrapper = new ViewWrapper(img2);
-                ObjectAnimator animator = ObjectAnimator.ofInt(wrapper,"width",width,1);
+                ObjectAnimator animator = ObjectAnimator.ofInt(wrapper,"height",h,1);
                 animator.setInterpolator(new AccelerateDecelerateInterpolator());
                 animator.addListener(new Animator.AnimatorListener() {
                     @Override
