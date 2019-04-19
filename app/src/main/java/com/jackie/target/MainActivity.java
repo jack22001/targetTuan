@@ -13,6 +13,8 @@ import butterknife.ButterKnife;
 public class MainActivity extends BaseActivity implements View.OnClickListener {
     @BindView(R.id.tv_animation)
     TextView tvAni;
+    @BindView(R.id.tv_custome_view)
+    TextView tvCustome;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -20,6 +22,7 @@ public class MainActivity extends BaseActivity implements View.OnClickListener {
         setContentView(R.layout.activity_main);
         ButterKnife.bind(this);
         tvAni.setOnClickListener(this);
+        tvCustome.setOnClickListener(this);
     }
 
     @Override
@@ -27,6 +30,9 @@ public class MainActivity extends BaseActivity implements View.OnClickListener {
         switch (v.getId()) {
             case R.id.tv_animation:
                 startActivity(new Intent(MainActivity.this,AnimateActivity.class));
+                break;
+            case R.id.tv_custome_view:
+                startActivity(new Intent(MainActivity.this,CustomViewActivity.class));
                 break;
             default:
                 break;
