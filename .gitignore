@@ -12,6 +12,7 @@
 /build
 /captures
 .idea
+.idea/
 .externalNativeBuild
 
 # Built application files
